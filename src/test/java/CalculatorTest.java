@@ -31,4 +31,10 @@ public class CalculatorTest {
     public void withAnyNumbersAmountReturnTheirSum() throws Exception {
         assertEquals(10, calculator.add("3,2,4,1"));
     }
+
+    @Test
+    public void withNewLineSeparatorReturnSum() throws Exception {
+        calculator = new Calculator("\n", ",");
+        assertEquals(8, calculator.add("3\n2,3"));
+    }
 }
