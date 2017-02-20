@@ -1,20 +1,20 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Calculator {
 
-    public static final String COMMA_SEPARATOR = ",";
+    private static final String DEFAULT_SEPARATOR = ",";
     private List<String> delimiters;
 
     public Calculator() {
         delimiters = new ArrayList<String>();
-        delimiters.add(COMMA_SEPARATOR);
+        delimiters.add(DEFAULT_SEPARATOR);
     }
 
     public Calculator(String... separators) {
         delimiters = new ArrayList<String>();
-        for (String separator : separators)
-            this.delimiters.add(separator);
+        Collections.addAll(this.delimiters, separators);
     }
 
     public int add(String numbers) {
